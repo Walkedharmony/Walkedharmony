@@ -176,7 +176,7 @@
     /* Item Proyek & Pengalaman */
     .entry {
       margin-bottom: 24px;
-      padding-bottom: 20px;
+      padding-bottom: 22px;
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -227,42 +227,35 @@
       margin-bottom: 4px;
     }
 
-    /* Grid 3 Screenshot per Proyek */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 12px;
-    }
-
+    /* Kartu Screenshot Umum */
     figure.shot {
       border: 1px solid var(--border-subtle);
-      border-radius: 4px;
+      border-radius: 6px;
       background: #f9fafb;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
     figure.shot img {
       width: 100%;
-      height: 145px;
-      object-fit: cover;
-      object-position: top center;
+      height: auto;
       display: block;
+      object-fit: contain;
       cursor: zoom-in;
       border-bottom: 1px solid var(--border-subtle);
       transition: opacity 0.15s ease;
     }
 
     figure.shot img:hover {
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .shot-fallback {
       display: none;
-      height: 145px;
-      padding: 10px;
+      min-height: 160px;
+      padding: 12px;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -274,11 +267,38 @@
     }
 
     figure.shot figcaption {
-      padding: 6px 8px;
+      padding: 8px 10px;
       font-size: 11.5px;
       color: var(--text-secondary);
-      line-height: 1.35;
+      line-height: 1.4;
       background: #ffffff;
+    }
+
+    /* Galeri Portrait Utuh (3 Kolom untuk Gardroid & Arya) */
+    .gallery-portrait {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    /* Galeri Rata Tengah (Zero Novel Team & Roblox) */
+    .gallery-centered {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .gallery-centered.two-cols figure.shot {
+      flex: 0 1 340px;
+      width: 100%;
+    }
+
+    .gallery-centered.one-col figure.shot {
+      flex: 0 1 540px;
+      width: 100%;
     }
 
     /* Modal Lightbox untuk Perbesar Gambar */
@@ -287,7 +307,7 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(17, 24, 39, 0.85);
+      background: rgba(17, 24, 39, 0.88);
       padding: 24px;
       align-items: center;
       justify-content: center;
@@ -350,13 +370,17 @@
         border-right: none;
       }
 
-      .gallery-grid {
+      .gallery-portrait {
         grid-template-columns: 1fr;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      figure.shot img,
-      .shot-fallback {
-        height: 180px;
+      .gallery-centered.two-cols figure.shot,
+      .gallery-centered.one-col figure.shot {
+        flex: 1 1 100%;
+        max-width: 100%;
       }
 
       .contact-list li:not(:last-child)::after {
@@ -405,9 +429,14 @@
         break-inside: avoid;
       }
 
-      figure.shot img,
-      .shot-fallback {
-        height: 105px;
+      .gallery-portrait figure.shot img {
+        max-height: 220px;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .gallery-centered.one-col figure.shot {
+        max-width: 380px;
       }
     }
   </style>
@@ -421,7 +450,7 @@
       <a href="#proyek">Proyek</a>
       <a href="#keahlian">Keahlian</a>
       <a href="#pengalaman">Pengalaman</a>
-      <a href="#pendidikan">Pendidikan & Sertifikasi</a>
+      <a href="#pendidikan">Pendidikan &amp; Sertifikasi</a>
     </nav>
     <div class="actions">
       <button type="button" class="btn" id="copy-email" data-email="khabibraihan5@gmail.com">Salin Email</button>
@@ -435,7 +464,7 @@
     <!-- Header -->
     <header class="doc-header">
       <h1>Khabib Raihan Hanafi, A.Md.T.</h1>
-      <p class="subtitle">Systems & Software Developer | D3 Teknik Kelistrikan Kapal</p>
+      <p class="subtitle">Systems &amp; Software Developer | D3 Teknik Kelistrikan Kapal</p>
       <ul class="contact-list">
         <li>Mojokerto, Jawa Timur</li>
         <li>(+62) 813-3369-8517</li>
@@ -455,12 +484,12 @@
 
     <!-- Proyek Perangkat Lunak -->
     <section id="proyek">
-      <h2>Proyek Perangkat Lunak & Pengembangan Mandiri</h2>
+      <h2>Proyek Perangkat Lunak &amp; Pengembangan Mandiri</h2>
 
-      <!-- Proyek 1: Gardroid -->
+      <!-- Proyek 1: Gardroid (3 Screenshot Portrait Utuh) -->
       <article class="entry">
         <div class="entry-header">
-          <h3 class="entry-title">1. Gardroid — Aplikasi Manajemen Berkas & Arsip Android</h3>
+          <h3 class="entry-title">1. Gardroid — Aplikasi Manajemen Berkas &amp; Arsip Android</h3>
           <span class="entry-meta">Status: Rilis / Open-Source</span>
         </div>
         <p class="entry-sub">
@@ -473,30 +502,29 @@
           <li>Merancang antarmuka responsif berbasis komponen Material Design 3 serta mengelola struktur kode dan pembaruan melalui Git.</li>
         </ul>
 
-        <!-- 3 Gambar Proyek 1 -->
-        <div class="gallery-grid">
+        <div class="gallery-portrait">
           <figure class="shot">
-            <img src="assets/gardroid-1.png" alt="Implementasi Parser C++ Native Gardroid"
+            <img src="assets/gardroid-1.png" alt="Penjelajah arsip data.xp3 pada Gardroid"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="shot-fallback">Unggah file:<br>assets/gardroid-1.png</div>
-            <figcaption>Implementasi modul parser biner C++ Native (Xp3Parser &amp; MemoryReader).</figcaption>
+            <figcaption>Penjelajah struktur direktori di dalam arsip biner <code>data.xp3</code> pada Android.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/gardroid-2.png" alt="Penjelajah Arsip Biner Gardroid"
+            <img src="assets/gardroid-2.png" alt="Pratinjau gambar langsung dari arsip .pfs di Gardroid"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="shot-fallback">Unggah file:<br>assets/gardroid-2.png</div>
-            <figcaption>Penjelajah struktur direktori di dalam arsip .xp3 dan .pfs di Android.</figcaption>
+            <figcaption>Pratinjau aset gambar langsung dari arsip <code>.pfs</code> tanpa ekstraksi manual.</figcaption>
           </figure>
           <figure class="shot">
-            <img src="assets/gardroid-3.png" alt="Ekstraksi dan Pratinjau Gambar Gardroid"
+            <img src="assets/gardroid-3.png" alt="Hasil ekstraksi arsip Gardroid_Extracted"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="shot-fallback">Unggah file:<br>assets/gardroid-3.png</div>
-            <figcaption>Proses ekstraksi berkas massal dan pratinjau gambar langsung di aplikasi.</figcaption>
+            <figcaption>Manajemen berkas lokal dan direktori hasil ekstraksi arsip (<code>Gardroid_Extracted</code>).</figcaption>
           </figure>
         </div>
       </article>
 
-      <!-- Proyek 2: Art3m1s/Arya -->
+      <!-- Proyek 2: Art3m1s/Arya (3 Screenshot Portrait Utuh) -->
       <article class="entry">
         <div class="entry-header">
           <h3 class="entry-title">2. Art3m1s/Arya — Cross-Platform Visual Novel Runtime (Fork Project)</h3>
@@ -512,13 +540,12 @@
           <li>Mengimplementasikan pembacaan arsip <code>.pfs</code> secara langsung dari penyimpanan perangkat (<em>in-place import</em>) tanpa menyalin ulang berkas besar, dukungan animasi karakter 2D (E-Mote), pemutaran video via FFmpeg, dan dukungan patch terjemahan.</li>
         </ul>
 
-        <!-- 3 Gambar Proyek 2 -->
-        <div class="gallery-grid">
+        <div class="gallery-portrait">
           <figure class="shot">
             <img src="assets/arya-1.png" alt="Tampilan Pustaka Gim Arya"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="shot-fallback">Unggah file:<br>assets/arya-1.png</div>
-            <figcaption>Manajemen pustaka gim berbasis Flutter dengan dukungan in-place import arsip .pfs.</figcaption>
+            <figcaption>Manajemen pustaka gim berbasis Flutter dengan dukungan <em>in-place import</em> arsip <code>.pfs</code>.</figcaption>
           </figure>
           <figure class="shot">
             <img src="assets/arya-2.png" alt="Pengaturan Rendering dan Kontrol Arya"
@@ -535,11 +562,11 @@
         </div>
       </article>
 
-      <!-- Proyek 3: Zero Novel Team -->
+      <!-- Proyek 3: Zero Novel Team (2 Screenshot Rata Tengah) -->
       <article class="entry">
         <div class="entry-header">
-          <h3 class="entry-title">3. Zero Novel Team — Lokalisasi Gim & Pengembangan Alat Bantu (Tooling)</h3>
-          <span class="entry-meta">Peran: Koordinator Proyek & Programmer Alat Bantu</span>
+          <h3 class="entry-title">3. Zero Novel Team — Lokalisasi Gim &amp; Pengembangan Alat Bantu (Tooling)</h3>
+          <span class="entry-meta">Peran: Koordinator Proyek &amp; Programmer Alat Bantu</span>
         </div>
         <p class="entry-sub">
           <strong>Teknologi:</strong> C++, Python, Git &nbsp;|&nbsp;
@@ -551,8 +578,7 @@
           <li>Memastikan teks hasil terjemahan bahasa Indonesia tampil rapi di dalam mesin gim tanpa terpotong atau mengalami kendala karakter.</li>
         </ul>
 
-        <!-- 3 Gambar Proyek 3 -->
-        <div class="gallery-grid">
+        <div class="gallery-centered two-cols">
           <figure class="shot">
             <img src="assets/zeronovel-1.png" alt="Layar Judul Sebelum Lokalisasi"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
@@ -568,7 +594,7 @@
         </div>
       </article>
 
-      <!-- Proyek 4: Roblox Studio Combat & Boss AI -->
+      <!-- Proyek 4: Roblox Studio Combat & Boss AI (1 Screenshot Rata Tengah) -->
       <article class="entry">
         <div class="entry-header">
           <h3 class="entry-title">4. Prototipe Sistem Pertarungan 3D &amp; Logika AI Musuh (Roblox Studio)</h3>
@@ -583,13 +609,12 @@
           <li>Menerapkan logika pengambilan keputusan pada karakter <em>boss</em> menggunakan pendekatan Utility AI dan GOAP sederhana agar musuh dapat memilih tindakan menyerang, bertahan, atau menghindar secara adaptif sesuai kondisi pertarungan.</li>
         </ul>
 
-        <!-- 3 Gambar Proyek 4 -->
-        <div class="gallery-grid">
+        <div class="gallery-centered one-col">
           <figure class="shot">
-            <img src="assets/roblox-1.png" alt="Viewport Pertarungan dan Rigging Karakter"
+            <img src="assets/roblox-1.png" alt="Viewport Pertarungan dan Arsitektur Modul Roblox Studio"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="shot-fallback">Unggah file:<br>assets/roblox-1.png</div>
-            <figcaption>Pengaturan animasi pertarungan jarak dekat dan rig karakter pada viewport Studio.</figcaption>
+            <figcaption>Pengaturan animasi pertarungan jarak dekat, struktur modul (ComboEngine, DamageSystem, DefendSystem), dan pengujian AI boss di Roblox Studio.</figcaption>
           </figure>
         </div>
       </article>
