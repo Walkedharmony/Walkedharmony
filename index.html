@@ -1,553 +1,472 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khabib Raihan Hanafi, A.Md.T. — Systems & Software Developer</title>
-  <meta name="description" content="Portofolio proyek perangkat lunak, pemrograman sistem (C++, Rust, Python, Java), dan pengembangan mandiri oleh Khabib Raihan Hanafi." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            base: '#090d16',
-            surface: '#111827',
-            card: '#151f32',
-            accent: '#38bdf8',
-            emerald: '#34d399',
-          }
-        }
+  <title>Khabib Raihan Hanafi, A.Md.T. — Portofolio & Resume</title>
+  <meta name="description" content="Portofolio proyek perangkat lunak, pemrograman sistem (C++, Rust, Python, Java), dan pengalaman teknis Khabib Raihan Hanafi, A.Md.T." />
+  <style>
+    :root {
+      --bg-page: #f4f5f7;
+      --bg-sheet: #ffffff;
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --text-muted: #6b7280;
+      --border-strong: #111827;
+      --border-subtle: #e5e7eb;
+      --link-color: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.55;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Bilah utilitas atas (tidak ikut tercetak) */
+    .utility-bar {
+      max-width: 820px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #f9fafb;
+    }
+
+    .btn-primary {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    .btn-primary:hover {
+      background: #1f2937;
+    }
+
+    /* Lembar Utama ATS */
+    .sheet {
+      max-width: 820px;
+      margin: 14px auto 48px;
+      background: var(--bg-sheet);
+      border: 1px solid var(--border-subtle);
+      padding: 44px 48px;
+    }
+
+    /* Header Identitas */
+    header.doc-header {
+      border-bottom: 2px solid var(--border-strong);
+      padding-bottom: 16px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .contact-list li:not(:last-child)::after {
+      content: "•";
+      margin-left: 14px;
+      color: #9ca3af;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Bagian / Section */
+    section {
+      margin-bottom: 24px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .summary-text {
+      color: var(--text-secondary);
+      text-align: left;
+    }
+
+    /* Item Proyek & Pengalaman */
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+    }
+
+    .entry-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .entry-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .entry-sub {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+      margin-bottom: 6px;
+    }
+
+    .entry-sub strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    ul.bullets {
+      padding-left: 18px;
+      color: var(--text-secondary);
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Daftar Keahlian Terstruktur */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--text-secondary);
+    }
+
+    .skills-list strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Responsif Layar Kecil */
+    @media (max-width: 640px) {
+      .sheet {
+        padding: 28px 20px;
+        margin: 10px 0 32px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .contact-list li:not(:last-child)::after {
+        content: "";
+        margin-left: 0;
+      }
+
+      .contact-list {
+        flex-direction: column;
+        gap: 3px;
       }
     }
-  </script>
-  <style>
-    body {
-      background-color: #090d16;
-      color: #e2e8f0;
-    }
-    .grid-bg {
-      background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-    .glass-nav {
-      background: rgba(9, 13, 22, 0.82);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+
+    /* Aturan Cetak / Export PDF ATS */
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 11pt;
+        line-height: 1.4;
+      }
+
+      .utility-bar {
+        display: none;
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      a {
+        color: #111827;
+        text-decoration: none;
+      }
+
+      section {
+        margin-bottom: 16px;
+      }
+
+      .entry {
+        margin-bottom: 12px;
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
-<body class="font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200">
+<body>
 
-  <!-- Navbar -->
-  <header class="fixed top-0 inset-x-0 z-50 glass-nav">
-    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-      <a href="#top" class="font-mono text-sm sm:text-base font-semibold tracking-tight text-white flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>walkedharmony<span class="text-sky-400">.github.io</span></span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#proyek" class="hover:text-sky-400 transition">Proyek</a>
-        <a href="#keahlian" class="hover:text-sky-400 transition">Keahlian</a>
-        <a href="#rekam-jejak" class="hover:text-sky-400 transition">Pengalaman & Sertifikasi</a>
-        <a href="#kontak" class="hover:text-sky-400 transition">Kontak</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <a href="https://github.com/Walkedharmony" target="_blank" rel="noopener"
-           class="px-3.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-xs font-mono text-slate-200 transition flex items-center gap-2">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
-        </a>
-      </div>
+  <!-- Navigasi & Aksi Cepat -->
+  <div class="utility-bar">
+    <nav class="nav-links" aria-label="Navigasi Bagian">
+      <a href="#ringkasan">Ringkasan</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#pendidikan">Pendidikan & Sertifikasi</a>
+    </nav>
+    <div class="actions">
+      <button type="button" class="btn" id="copy-email" data-email="khabibraihan5@gmail.com">Salin Email</button>
+      <button type="button" class="btn btn-primary" onclick="window.print()">Cetak / Simpan PDF</button>
     </div>
-  </header>
+  </div>
 
-  <!-- Hero Section -->
-  <section id="top" class="relative pt-32 pb-20 sm:pt-36 sm:pb-24 grid-bg border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-mono">
-            <span>Mojokerto, Jawa Timur</span>
-            <span>•</span>
-            <span>Open-Source & Systems Dev</span>
-          </div>
+  <!-- Dokumen Portofolio ATS-Friendly -->
+  <main class="sheet">
 
-          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Khabib Raihan Hanafi, <span class="text-sky-400">A.Md.T.</span>
-          </h1>
+    <!-- Header -->
+    <header class="doc-header">
+      <h1>Khabib Raihan Hanafi, A.Md.T.</h1>
+      <p class="subtitle">Systems & Software Developer | D3 Teknik Kelistrikan Kapal</p>
+      <ul class="contact-list">
+        <li>Mojokerto, Jawa Timur</li>
+        <li>(+62) 813-3369-8517</li>
+        <li><a href="mailto:khabibraihan5@gmail.com">khabibraihan5@gmail.com</a></li>
+        <li><a href="https://github.com/Walkedharmony" target="_blank" rel="noopener">github.com/Walkedharmony</a></li>
+        <li><a href="https://www.linkedin.com/in/khabib-raihan-09071a261" target="_blank" rel="noopener">linkedin.com/in/khabib-raihan-09071a261</a></li>
+      </ul>
+    </header>
 
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-            Pengembang perangkat lunak mandiri dengan latar belakang <strong class="text-white font-semibold">D3 Teknik Kelistrikan Kapal (PPNS)</strong>. Berfokus pada pemrograman sistem tingkat rendah (<span class="font-mono text-sky-300 text-sm">C++</span>, <span class="font-mono text-sky-300 text-sm">Rust</span>, <span class="font-mono text-sky-300 text-sm">Python</span>, <span class="font-mono text-sky-300 text-sm">Java/JNI</span>), pemrosesan arsip biner, serta arsitektur runtime lintas platform.
-          </p>
+    <!-- Ringkasan -->
+    <section id="ringkasan">
+      <h2>Ringkasan Profesional</h2>
+      <p class="summary-text">
+        Lulusan D3 Teknik Kelistrikan Kapal Politeknik Perkapalan Negeri Surabaya dengan rekam jejak pengembangan perangkat lunak dan infrastruktur secara mandiri. Berfokus pada pemrograman sistem (C++, Rust, Python, Java), pemrosesan arsip data biner, integrasi lintas bahasa (JNI dan C FFI), serta arsitektur runtime aplikasi.
+      </p>
+    </section>
 
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a href="#proyek"
-               class="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition shadow-lg shadow-sky-500/20">
-              Jelajahi Proyek
-            </a>
-            <a href="https://www.linkedin.com/in/khabib-raihan-09071a261" target="_blank" rel="noopener"
-               class="px-5 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-medium text-sm transition">
-              LinkedIn Profil
-            </a>
-            <a href="#kontak"
-               class="px-5 py-2.5 rounded-xl bg-transparent hover:bg-slate-800/50 border border-slate-700/80 text-slate-300 font-medium text-sm transition">
-              Hubungi Saya
-            </a>
-          </div>
+    <!-- Proyek Perangkat Lunak -->
+    <section id="proyek">
+      <h2>Proyek Perangkat Lunak & Pengembangan Mandiri</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">1. Gardroid — Aplikasi Manajemen Berkas & Arsip Android</h3>
+          <span class="entry-meta">Status: Rilis / Open-Source</span>
         </div>
-
-        <!-- Terminal Summary Card -->
-        <div class="lg:col-span-5">
-          <div class="rounded-2xl bg-[#0d1322] border border-slate-800 shadow-2xl overflow-hidden">
-            <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
-              </div>
-              <span class="font-mono text-xs text-slate-400">profile.json</span>
-            </div>
-            <pre class="p-5 font-mono text-xs sm:text-sm text-slate-300 overflow-x-auto leading-relaxed"><code>{
-  <span class="text-sky-400">"name"</span>: <span class="text-emerald-300">"Khabib Raihan Hanafi, A.Md.T."</span>,
-  <span class="text-sky-400">"education"</span>: <span class="text-emerald-300">"D3 Teknik Kelistrikan Kapal (PPNS)"</span>,
-  <span class="text-sky-400">"focus"</span>: [
-    <span class="text-amber-300">"Systems Programming (C++ / Rust)"</span>,
-    <span class="text-amber-300">"Binary Archive Parsing & Tooling"</span>,
-    <span class="text-amber-300">"Android Native (JNI) & Flutter FFI"</span>
-  ],
-  <span class="text-sky-400">"english"</span>: <span class="text-emerald-300">"EF SET B2 (58/100) | TEC 590"</span>,
-  <span class="text-sky-400">"github"</span>: <span class="text-emerald-300">"github.com/Walkedharmony"</span>
-}</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="proyek" class="py-20 max-w-6xl mx-auto px-5">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-      <div>
-        <p class="font-mono text-xs uppercase tracking-widest text-sky-400 mb-2">// Selected Works</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white">Proyek Perangkat Lunak & Eksplorasi</h2>
-      </div>
-
-      <!-- Category Filter -->
-      <div class="flex flex-wrap gap-2" id="filter-buttons">
-        <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-mono bg-sky-500 text-slate-950 font-semibold transition">
-          Semua (4)
-        </button>
-        <button data-filter="systems" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition">
-          Systems & Runtime
-        </button>
-        <button data-filter="tooling" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition">
-          Tooling & Game Dev
-        </button>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
-
-      <!-- Project 1: Gardroid -->
-      <article data-category="systems" class="project-card rounded-2xl bg-card border border-slate-800 hover:border-sky-500/40 transition flex flex-col overflow-hidden">
-        <div class="relative h-52 bg-slate-900 border-b border-slate-800 overflow-hidden">
-          <img src="assets/gardroid.png" alt="Tampilan Gardroid Android"
-               class="w-full h-full object-cover object-top"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col justify-between p-5 bg-gradient-to-br from-slate-900 via-[#0f172a] to-sky-950/40 font-mono text-xs">
-            <div class="flex justify-between text-slate-400">
-              <span>Xp3Parser.cpp • PfsParser.cpp</span>
-              <span class="text-emerald-400">JNI Native</span>
-            </div>
-            <div class="my-auto text-slate-300 space-y-1">
-              <p class="text-sky-400">struct MemoryReader {</p>
-              <p class="pl-4">const char* data; size_t size; size_t pos;</p>
-              <p class="pl-4 text-slate-400">// High-speed binary archive extraction</p>
-              <p class="text-sky-400">};</p>
-            </div>
-            <div class="text-[11px] text-slate-500">Tip: Tambahkan screenshot ke assets/gardroid.png</div>
-          </div>
-          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-mono text-[11px]">
-            Rilis • Open-Source
-          </span>
-        </div>
-
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="text-xl font-bold text-white mb-2">1. Gardroid — Manajemen Berkas & Arsip Android</h3>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Aplikasi pengelola berkas Android ringan untuk membaca dan mengekstrak format arsip biner gim langsung di perangkat seluler dengan antarmuka Material Design 3.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-1.5 mb-5 list-disc list-inside">
-            <li>Modul pembacaan & ekstraksi biner ditulis dalam <strong class="text-slate-200">C++ Native</strong> untuk kecepatan pemrosesan tinggi.</li>
-            <li>Integrasi ke lapisan antarmuka <strong class="text-slate-200">Java / Android SDK</strong> melalui jembatan <strong class="text-slate-200">JNI</strong>.</li>
-            <li>Desain antarmuka responsif berbasis komponen Material Design 3.</li>
-          </ul>
-
-          <div class="mt-auto pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">C++ (JNI)</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Java</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Android SDK</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Material 3</span>
-            </div>
-            <a href="https://github.com/Walkedharmony/Gardroid" target="_blank" rel="noopener"
-               class="text-xs font-mono text-sky-400 hover:text-sky-300 inline-flex items-center gap-1">
-              <span>Repositori</span>
-              <span>↗</span>
-            </a>
-          </div>
-        </div>
+        <p class="entry-sub">
+          <strong>Teknologi:</strong> C++ (Native/JNI), Java, Android SDK, Material Design 3 &nbsp;|&nbsp;
+          <strong>Kode Sumber:</strong> <a href="https://github.com/Walkedharmony/Gardroid" target="_blank" rel="noopener">github.com/Walkedharmony/Gardroid</a>
+        </p>
+        <ul class="bullets">
+          <li>Membangun aplikasi pengelola berkas Android ringan yang mampu membaca dan mengekstrak format arsip biner gim langsung pada perangkat seluler.</li>
+          <li>Menulis modul pembacaan dan ekstraksi data biner menggunakan C++ Native agar pemrosesan berjalan cepat, lalu menghubungkannya ke antarmuka Java melalui JNI.</li>
+          <li>Merancang antarmuka responsif berbasis komponen Material Design 3 serta mengelola struktur kode dan pembaruan melalui Git.</li>
+        </ul>
       </article>
 
-      <!-- Project 2: Art3m1s/Arya -->
-      <article data-category="systems" class="project-card rounded-2xl bg-card border border-slate-800 hover:border-sky-500/40 transition flex flex-col overflow-hidden">
-        <div class="relative h-52 bg-slate-900 border-b border-slate-800 overflow-hidden">
-          <img src="assets/arya.png" alt="Antarmuka Art3m1s Arya"
-               class="w-full h-full object-cover object-top"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col justify-between p-5 bg-gradient-to-br from-slate-900 via-[#131b2e] to-indigo-950/40 font-mono text-xs">
-            <div class="flex justify-between text-slate-400">
-              <span>art3m1s-core (Rust) ⇄ Flutter UI</span>
-              <span class="text-sky-400">60 FPS / C FFI</span>
-            </div>
-            <div class="my-auto text-slate-300 space-y-1">
-              <p class="text-indigo-300">Graphics Backend: ANGLE / OpenGL ES</p>
-              <p class="text-slate-400">• In-place .pfs archive streaming</p>
-              <p class="text-slate-400">• E-Mote 2D animation & FFmpeg video</p>
-            </div>
-            <div class="text-[11px] text-slate-500">Tip: Tambahkan screenshot ke assets/arya.png</div>
-          </div>
-          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-sky-500/20 border border-sky-500/30 text-sky-300 font-mono text-[11px]">
-            Aktif • MPL-2.0
-          </span>
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">2. Art3m1s/Arya — Cross-Platform Visual Novel Runtime (Fork Project)</h3>
+          <span class="entry-meta">Status: Aktif / Open-Source (MPL-2.0)</span>
         </div>
-
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="text-xl font-bold text-white mb-2">2. Art3m1s/Arya — Cross-Platform Visual Novel Runtime</h3>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Proyek <em>fork</em> runtime lintas platform untuk menjalankan gim berbasis Artemis Engine secara langsung tanpa proses <em>porting</em> manual per judul gim.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-1.5 mb-5 list-disc list-inside">
-            <li>Arsitektur terpisah: <strong class="text-slate-200">Rust (art3m1s-core)</strong> untuk eksekusi skrip & rendering 60 FPS via <strong class="text-slate-200">C FFI</strong>, serta <strong class="text-slate-200">Flutter</strong> untuk manajemen pustaka & UI.</li>
-            <li>Pembacaan arsip <code class="text-sky-300">.pfs</code> secara <em>in-place</em> dari penyimpanan tanpa menyalin ulang data besar.</li>
-            <li>Dukungan animasi karakter 2D (E-Mote), pemutaran video via <strong class="text-slate-200">FFmpeg</strong>, dan patch terjemahan.</li>
-          </ul>
-
-          <div class="mt-auto pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Rust</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Flutter (Dart)</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">C FFI</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">FFmpeg</span>
-            </div>
-            <a href="https://github.com/Walkedharmony/Arya" target="_blank" rel="noopener"
-               class="text-xs font-mono text-sky-400 hover:text-sky-300 inline-flex items-center gap-1">
-              <span>Repositori</span>
-              <span>↗</span>
-            </a>
-          </div>
-        </div>
+        <p class="entry-sub">
+          <strong>Teknologi:</strong> Rust, Flutter (Dart), C FFI, FFmpeg, Material Design 3 &nbsp;|&nbsp;
+          <strong>Kode Sumber:</strong> <a href="https://github.com/Walkedharmony/Arya" target="_blank" rel="noopener">github.com/Walkedharmony/Arya</a>
+        </p>
+        <ul class="bullets">
+          <li>Mengembangkan runtime lintas platform untuk menjalankan gim berbasis Artemis Engine tanpa memerlukan proses porting manual pada setiap gim.</li>
+          <li>Memisahkan arsitektur sistem menjadi dua lapisan: Rust (<code>art3m1s-core</code>) untuk eksekusi skrip, manajemen state permainan, dan rendering 60 FPS melalui antarmuka C FFI, serta Flutter untuk manajemen pustaka dan antarmuka layar sentuh.</li>
+          <li>Mengimplementasikan pembacaan arsip <code>.pfs</code> secara langsung dari penyimpanan perangkat (<em>in-place import</em>) tanpa menyalin ulang berkas besar, dukungan animasi karakter 2D (E-Mote), pemutaran video via FFmpeg, dan dukungan patch terjemahan.</li>
+        </ul>
       </article>
 
-      <!-- Project 3: Zero Novel Team -->
-      <article data-category="tooling" class="project-card rounded-2xl bg-card border border-slate-800 hover:border-sky-500/40 transition flex flex-col overflow-hidden">
-        <div class="relative h-52 bg-slate-900 border-b border-slate-800 overflow-hidden">
-          <img src="assets/zeronovel.png" alt="Lokalisasi Zero Novel Team"
-               class="w-full h-full object-cover object-center"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col justify-between p-5 bg-gradient-to-br from-slate-900 via-[#101c24] to-emerald-950/30 font-mono text-xs">
-            <div class="flex justify-between text-slate-400">
-              <span>unpack.py / repack.cpp</span>
-              <span class="text-emerald-400">Localization Pipeline</span>
-            </div>
-            <div class="my-auto text-slate-300 space-y-1.5">
-              <p class="text-slate-400">[EN] "Excuse me, you're Yuuto-san, aren't you?"</p>
-              <p class="text-emerald-300">[ID] "Kamu Yuuto-san, 'kan? Salam kenal."</p>
-            </div>
-            <div class="text-[11px] text-slate-500">Tip: Tambahkan screenshot ke assets/zeronovel.png</div>
-          </div>
-          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-amber-500/20 border border-amber-500/30 text-amber-300 font-mono text-[11px]">
-            Komunitas • Berjalan
-          </span>
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">3. Zero Novel Team — Lokalisasi Gim & Pengembangan Alat Bantu (Tooling)</h3>
+          <span class="entry-meta">Peran: Koordinator Proyek & Programmer Alat Bantu</span>
         </div>
-
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="text-xl font-bold text-white mb-2">3. Zero Novel Team — Lokalisasi Gim & Tooling</h3>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Koordinator proyek dan pengembang alat bantu teknis untuk menerjemahkan visual novel ke bahasa Indonesia secara akurat tanpa merusak struktur berkas asli gim.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-1.5 mb-5 list-disc list-inside">
-            <li>Membangun skrip dan program <strong class="text-slate-200">C++ & Python</strong> untuk membongkar (<em>unpack</em>) dan mengemas ulang (<em>repack</em>) arsip dialog gim.</li>
-            <li>Mengelola alur kerja penerjemahan, penyuntingan (<em>editing</em>), dan pengujian QA dalam tim kecil.</li>
-            <li>Memastikan tata letak teks terjemahan tampil rapi di dalam mesin gim tanpa terpotong atau <em>encoding error</em>.</li>
-          </ul>
-
-          <div class="mt-auto pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">C++</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Python</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Git</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Binary Reverse Eng</span>
-            </div>
-            <span class="text-xs font-mono text-slate-400">Lead & Tooling Dev</span>
-          </div>
-        </div>
+        <p class="entry-sub">
+          <strong>Teknologi:</strong> C++, Python, Git &nbsp;|&nbsp;
+          <strong>Status:</strong> Selesai & Berjalan (Proyek Komunitas)
+        </p>
+        <ul class="bullets">
+          <li>Membuat skrip dan program bantu menggunakan C++ dan Python untuk membongkar (<em>unpack</em>) arsip gim, mengekstrak teks dialog, dan mengemasnya kembali (<em>repack</em>) tanpa merusak struktur berkas asli.</li>
+          <li>Mengatur pembagian alur kerja penerjemahan, penyuntingan (<em>editing</em>), dan pengujian hasil dalam tim kecil.</li>
+          <li>Memastikan teks hasil terjemahan bahasa Indonesia tampil rapi di dalam mesin gim tanpa terpotong atau mengalami kendala karakter.</li>
+        </ul>
       </article>
 
-      <!-- Project 4: Roblox Combat & Boss AI -->
-      <article data-category="tooling" class="project-card rounded-2xl bg-card border border-slate-800 hover:border-sky-500/40 transition flex flex-col overflow-hidden">
-        <div class="relative h-52 bg-slate-900 border-b border-slate-800 overflow-hidden">
-          <img src="assets/roblox-combat.png" alt="Prototipe Sistem Pertarungan Roblox Studio"
-               class="w-full h-full object-cover object-center"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col justify-between p-5 bg-gradient-to-br from-slate-900 via-[#1a1528] to-purple-950/30 font-mono text-xs">
-            <div class="flex justify-between text-slate-400">
-              <span>ComboEngine • DefendSystem</span>
-              <span class="text-purple-300">Utility AI / GOAP</span>
-            </div>
-            <div class="my-auto text-slate-300 space-y-1">
-              <p class="text-purple-300">BossController:EvaluateState()</p>
-              <p class="text-slate-400">→ Parry / Deflect timing window</p>
-              <p class="text-slate-400">→ Dynamic Attack / Evade decision tree</p>
-            </div>
-            <div class="text-[11px] text-slate-500">Tip: Tambahkan screenshot ke assets/roblox-combat.png</div>
-          </div>
-          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-purple-500/20 border border-purple-500/30 text-purple-300 font-mono text-[11px]">
-            Prototipe Gim
-          </span>
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">4. Prototipe Sistem Pertarungan 3D & Logika AI Musuh (Roblox Studio)</h3>
+          <span class="entry-meta">Status: Prototipe / Eksplorasi Logika Gim</span>
         </div>
+        <p class="entry-sub">
+          <strong>Teknologi:</strong> Roblox Studio, Utility AI, GOAP &nbsp;|&nbsp;
+          <strong>Cuplikan Demo:</strong> <a href="https://imgur.com/a/ZAoWVc6" target="_blank" rel="noopener">imgur.com/a/ZAoWVc6</a>
+        </p>
+        <ul class="bullets">
+          <li>Membangun sistem pertarungan jarak dekat sudut pandang orang ketiga (<em>Third-person</em>) dengan mekanik menangkis serangan (<em>parry/deflect</em>) berbasis ketepatan waktu.</li>
+          <li>Menerapkan logika pengambilan keputusan pada karakter <em>boss</em> menggunakan pendekatan Utility AI dan GOAP sederhana agar musuh dapat memilih tindakan menyerang, bertahan, atau menghindar secara adaptif sesuai kondisi pertarungan.</li>
+        </ul>
+      </article>
+    </section>
 
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="text-xl font-bold text-white mb-2">4. Prototipe Sistem Pertarungan 3D & Logika AI Musuh</h3>
-          <p class="text-sm text-slate-300 leading-relaxed mb-4">
-            Eksplorasi desain mekanik pertarungan jarak dekat yang responsif dan perilaku musuh (<em>boss</em>) adaptif di dalam lingkungan 3D Roblox Studio.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-1.5 mb-5 list-disc list-inside">
-            <li>Sistem pertarungan sudut pandang orang ketiga (<em>Third-person</em>) dengan mekanik tangkisan (<em>parry/deflect</em>) berbasis ketepatan waktu.</li>
-            <li>Pengambilan keputusan karakter <em>boss</em> menggunakan pendekatan <strong class="text-slate-200">Utility AI</strong> dan <strong class="text-slate-200">GOAP</strong> sederhana.</li>
-            <li>Musuh mampu memilih aksi menyerang, bertahan, atau menghindar secara dinamis sesuai situasi pertarungan.</li>
-          </ul>
+    <!-- Keahlian Teknis -->
+    <section id="keahlian">
+      <h2>Keahlian Teknis</h2>
+      <ul class="skills-list">
+        <li><strong>Bahasa Pemrograman & Core:</strong> C++ (Native), Rust, Python, Java</li>
+        <li><strong>Interoperabilitas & Grafis:</strong> Java Native Interface (JNI), C Foreign Function Interface (C FFI), OpenGL ES / ANGLE, FFmpeg</li>
+        <li><strong>Pengembangan Aplikasi & UI:</strong> Android SDK, Flutter (Dart), Material Design 3, Roblox Studio</li>
+        <li><strong>Alat & Rekayasa Perangkat Lunak:</strong> Git, GitHub, Analisis & Parsing Format Biner, Unpack/Repack Arsip Gim</li>
+        <li><strong>Rekayasa Kelistrikan & Industri:</strong> Teknik Kelistrikan Kapal, Pemeliharaan Mesin & Fasilitas Industri</li>
+      </ul>
+    </section>
 
-          <div class="mt-auto pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Roblox Studio</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Utility AI</span>
-              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">GOAP</span>
-            </div>
-            <a href="https://imgur.com/a/ZAoWVc6" target="_blank" rel="noopener"
-               class="text-xs font-mono text-sky-400 hover:text-sky-300 inline-flex items-center gap-1">
-              <span>Cuplikan Demo</span>
-              <span>↗</span>
-            </a>
-          </div>
+    <!-- Pengalaman -->
+    <section id="pengalaman">
+      <h2>Pengalaman Praktik Industri</h2>
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">PT Hon Chuan Indonesia — Departemen Maintenance</h3>
+          <span class="entry-meta">1 September 2025 – 31 Desember 2025</span>
         </div>
+        <p class="entry-sub">
+          <strong>Program On the Job Training (OJT)</strong> &nbsp;|&nbsp; Ngoro Industrial Park Blok F2 No. 1, Kec. Ngoro, Mojokerto, Jawa Timur
+        </p>
+        <ul class="bullets">
+          <li>Menyelesaikan program praktik kerja industri selama 4 bulan (16 minggu / 640 jam kerja) pada Departemen Maintenance.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Pendidikan & Sertifikasi -->
+    <section id="pendidikan">
+      <h2>Pendidikan & Sertifikasi</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">Politeknik Perkapalan Negeri Surabaya (PPNS)</h3>
+          <span class="entry-meta">Gelar Ahli Madya Teknik (A.Md.T.)</span>
+        </div>
+        <p class="entry-sub">Program Studi D3 Teknik Kelistrikan Kapal</p>
       </article>
 
-    </div>
-  </section>
+      <ul class="bullets">
+        <li>
+          <strong>Sertifikat Kompetensi Profesi — LSP P1 Politeknik Perkapalan Negeri Surabaya:</strong> Dinyatakan Kompeten (K) oleh asesor kompetensi (Diterbitkan di Surabaya, 14 Agustus 2026).
+        </li>
+        <li>
+          <strong>EF SET English Certificate:</strong> Skor Total <strong>58/100</strong> — Level <strong>B2 Upper Intermediate</strong> (Reading: 63 / C1 Advanced; Listening: 52 / B2 Upper Intermediate; Diterbitkan 26 April 2026).
+        </li>
+        <li>
+          <strong>Test of English Competency (TEC) — PPNS:</strong> Skor Total <strong>590</strong> (Listening: 355; Reading: 235; Berlaku hingga 10 April 2028).
+        </li>
+      </ul>
+    </section>
 
-  <!-- Tech Stack Section -->
-  <section id="keahlian" class="py-16 bg-surface/50 border-y border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-5">
-      <p class="font-mono text-xs uppercase tracking-widest text-sky-400 mb-2">// Technical Stack</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10">Keahlian & Teknologi</h2>
+  </main>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-5 rounded-2xl bg-card border border-slate-800">
-          <h3 class="font-mono text-xs uppercase tracking-wider text-sky-400 mb-3">Systems & Core</h3>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">C++ (Native)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Rust</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Python</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Java</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">JNI & C FFI</span>
-          </div>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-card border border-slate-800">
-          <h3 class="font-mono text-xs uppercase tracking-wider text-emerald-400 mb-3">Mobile & UI</h3>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Android SDK</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Flutter (Dart)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Material Design 3</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">OpenGL ES / ANGLE</span>
-          </div>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-card border border-slate-800">
-          <h3 class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-3">Tools & Multimedia</h3>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Git & GitHub</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">FFmpeg</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Roblox Studio</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Binary Parsing</span>
-          </div>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-card border border-slate-800">
-          <h3 class="font-mono text-xs uppercase tracking-wider text-purple-400 mb-3">Engineering Domain</h3>
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Teknik Kelistrikan Kapal</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700">Industrial Maintenance</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience, Education & Certifications -->
-  <section id="rekam-jejak" class="py-20 max-w-6xl mx-auto px-5">
-    <p class="font-mono text-xs uppercase tracking-widest text-sky-400 mb-2">// Background & Credentials</p>
-    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10">Pengalaman, Pendidikan & Sertifikasi</h2>
-
-    <div class="grid lg:grid-cols-2 gap-8">
-      <!-- Left Column: Experience & Education -->
-      <div class="space-y-6">
-        <div class="p-6 rounded-2xl bg-card border border-slate-800">
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="px-2.5 py-0.5 rounded bg-sky-500/15 text-sky-300 font-mono text-xs">On the Job Training (OJT)</span>
-            <span class="font-mono text-xs text-slate-400">Sep 2025 – Des 2025</span>
-          </div>
-          <h3 class="text-lg font-bold text-white">Departemen Maintenance — PT Hon Chuan Indonesia</h3>
-          <p class="text-xs text-slate-400 mb-3">Ngoro Industrial Park, Mojokerto, Jawa Timur</p>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Menyelesaikan program praktik kerja industri selama 4 bulan (16 minggu / 640 jam kerja) pada departemen pemeliharaan fasilitas dan mesin produksi industri.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-card border border-slate-800">
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 font-mono text-xs">Pendidikan Vokasi</span>
-            <span class="font-mono text-xs text-slate-400">Gelar A.Md.T.</span>
-          </div>
-          <h3 class="text-lg font-bold text-white">D3 Teknik Kelistrikan Kapal</h3>
-          <p class="text-xs text-slate-400 mb-3">Politeknik Perkapalan Negeri Surabaya (PPNS)</p>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            Menempuh pendidikan rekayasa kelistrikan maritim dan sistem kontrol industri sambil secara aktif membangun keahlian rekayasa perangkat lunak secara mandiri.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right Column: Certifications -->
-      <div class="space-y-4">
-        <div class="p-5 rounded-2xl bg-card border border-slate-800 flex items-start justify-between gap-4">
-          <div>
-            <span class="font-mono text-xs text-emerald-400">Sertifikasi Kompetensi Profesi</span>
-            <h3 class="text-base font-bold text-white mt-1">LSP P1 Politeknik Perkapalan Negeri Surabaya</h3>
-            <p class="text-xs text-slate-400 mt-1">Rekomendasi: <strong class="text-emerald-300">Kompeten (K)</strong> • Diterbitkan 14 Agustus 2026</p>
-          </div>
-          <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-mono text-xs shrink-0">
-            BNSP / LSP
-          </span>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-card border border-slate-800 flex items-start justify-between gap-4">
-          <div>
-            <span class="font-mono text-xs text-sky-400">Sertifikasi Bahasa Inggris (CEFR)</span>
-            <h3 class="text-base font-bold text-white mt-1">EF SET English Certificate — B2 Upper Intermediate</h3>
-            <p class="text-xs text-slate-400 mt-1">Skor Total <strong class="text-white">58/100</strong> (Reading: 63 / C1 Advanced • Listening: 52 / B2) • 26 April 2026</p>
-          </div>
-          <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-300 font-mono text-xs shrink-0">
-            B2 / C1
-          </span>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-card border border-slate-800 flex items-start justify-between gap-4">
-          <div>
-            <span class="font-mono text-xs text-amber-400">Kemampuan Bahasa Inggris Akademik</span>
-            <h3 class="text-base font-bold text-white mt-1">Test of English Competency (TEC) — PPNS</h3>
-            <p class="text-xs text-slate-400 mt-1">Skor Total <strong class="text-white">590</strong> (Listening: 355 • Reading: 235) • Berlaku hingga 10 April 2028</p>
-          </div>
-          <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 font-mono text-xs shrink-0">
-            Skor 590
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Footer -->
-  <footer id="kontak" class="py-16 bg-[#060911] border-t border-slate-800">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="rounded-2xl bg-gradient-to-r from-slate-900 to-[#111b30] border border-slate-800 p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-2">Tertarik Berkolaborasi atau Berdiskusi?</h2>
-          <p class="text-sm text-slate-300 max-w-xl">
-            Terbuka untuk peluang pengembangan perangkat lunak, rekayasa sistem, maupun proyek teknis. Hubungi saya langsung melalui email atau tautan profesional di bawah ini.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap gap-3">
-          <button id="copy-email-btn" data-email="khabibraihan5@gmail.com"
-                  class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs sm:text-sm transition cursor-pointer">
-            Salin Email: khabibraihan5@gmail.com
-          </button>
-          <a href="tel:+6281333698517"
-             class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-mono text-xs sm:text-sm transition">
-            +62 813-3369-8517
-          </a>
-        </div>
-      </div>
-
-      <div class="mt-10 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
-        <p>© 2026 Khabib Raihan Hanafi, A.Md.T. — Mojokerto, Jawa Timur.</p>
-        <div class="flex items-center gap-5 text-slate-400">
-          <a href="https://github.com/Walkedharmony" target="_blank" rel="noopener" class="hover:text-sky-400 transition">GitHub</a>
-          <a href="https://www.linkedin.com/in/khabib-raihan-09071a261" target="_blank" rel="noopener" class="hover:text-sky-400 transition">LinkedIn</a>
-          <a href="mailto:khabibraihan5@gmail.com" class="hover:text-sky-400 transition">Email</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Interactive Script -->
   <script>
-    // Filter Proyek
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
-          b.classList.remove('active', 'bg-sky-500', 'text-slate-950', 'font-semibold');
-          b.classList.add('bg-slate-800/80', 'text-slate-300');
-        });
-        btn.classList.add('active', 'bg-sky-500', 'text-slate-950', 'font-semibold');
-        btn.classList.remove('bg-slate-800/80', 'text-slate-300');
-
-        const filter = btn.getAttribute('data-filter');
-        projectCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Salin Email ke Clipboard
-    const copyBtn = document.getElementById('copy-email-btn');
+    const copyBtn = document.getElementById('copy-email');
     copyBtn.addEventListener('click', () => {
       const email = copyBtn.getAttribute('data-email');
       navigator.clipboard.writeText(email).then(() => {
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = '✓ Email Tersalin!';
-        copyBtn.classList.replace('bg-sky-500', 'bg-emerald-400');
+        const original = copyBtn.textContent;
+        copyBtn.textContent = 'Email Tersalin';
         setTimeout(() => {
-          copyBtn.textContent = originalText;
-          copyBtn.classList.replace('bg-emerald-400', 'bg-sky-500');
-        }, 2000);
+          copyBtn.textContent = original;
+        }, 1800);
       });
     });
   </script>
